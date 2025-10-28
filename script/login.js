@@ -1,33 +1,40 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // evita que o formulário seja enviado para um servidor
+function Autenticar() {
 
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
+  const vemail = document.getElementById("email").value.trim();
+  const vsenha = document.getElementById("senha").value.trim();
+  //let valorDaChaveDoProfessor = localStorage.getItem('id_professor');
 
-  if (!email || !password) {
-    alert('Por favor, preencha todos os campos.');
-    return;
-  }
+  var headers = new Headers();
+  headers.append("Content-Type", "application/json");
+  headers.append("Access-Control-Allow-Origin", "*");
 
-  // Aqui você pode colocar a lógica de autenticação, por exemplo:
-  console.log('Login com:', { email, password });
-  alert('Login realizado com sucesso! (simulado)');
-});
-   
+  fetch("http://127.0.0.1:8080/auth/login;"),({
 
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
 
-function Logar() {
-   
+    body: JSON.stringify({
+      email: vemail,
+      senha: vsenha
+    }),
+     
+    headers: headers
 
+ 
+  }).then(response => {
+    if (!response.ok) {
+      throw new Error("Erro na resposta da API");
+    }
+    return response.json(); // <- converte o corpo da resposta em JSON
+  }).then(  data =>  {
 
-    // Envia os dados via fetch
-    fetch("http://127.0.0.1:8080/login/authenticate", { // altere a URL conforme seu endpoint
-       
-    }).then(response => {
-           
-    }).then(data => {
-       
-    }).catch(error => {
-       
-    });
+    const autenticodo_id = data.id;
+    console.log("Id do registro salvo: ", autenticodo_id);
+
+    localStorage.setItem('autenticodo_id', autenticodo_id);
+    //let valorDaChaveDoProfessor = localStorage.getItem('id_professor');
+
+  }).catch(error => console.error('Erro!:', error));
+
 }
