@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro de loja</title>
+    <link rel="stylesheet" href="../asset/style/loja.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Cadastro de Loja</h1>
+            <p class="mb-0">Preencha as informações abaixo para cadastrar sua loja</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="address-form">
+                <div class="address-group" id="main-address">
+                    <div class="address-group-header">
+                        <div class="address-title">Informações da Loja</div>
+                        <button type="button" class="btn btn-danger remove-address" style="display: none;">Remover</button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="nome">Nome da Loja</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome da loja" name="nome" >
+                       
+                         <div id="erro-nome" class="erro"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        
+                        <label class="form-label required" for="email">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="Digite o e-mail" name="email" >
+                        <div id="erro-email" class="erro"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="telefone">Telefone</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="Digite o telefone" name="telefone" >
+                    
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="cnpj">CNPJ</label>
+                        <input type="text" class="form-control" id="cnpj" placeholder="Digite o CNPJ" name="cnpj" >
+             
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required" for="endereco">Endereço</label>
+                        <select class="form-control" id="endereco" name="endereco">
+                            <option value="" selected disabled>Selecione um endereço</option>
+                            <option value="endereco1">Endereço 1</option>
+                            <option value="endereco2">Endereço 2</option>
+                            <option value="endereco3">Endereço 3</option>
+                        </select>
+
+                    </div>
+                </div>
+                
+                <div id="additional-addresses"></div>
+                
+                <button type="button" class="btn-add-address" id="add-address">
+                    <i class="fas fa-plus"></i> Adicionar Endereço
+                </button>
+                
+                <div class="form-footer">
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-primary" onclick="cadastrarloja()"> Cadastrar </button>
+
+                        <button type="button" class="btn btn-primary" onclick="consultarloja()"> consultar </button>
+
+                        <button type="button" class="btn btn-primary" onclick="deletarloja()"> deletar </button>
+
+                        <button type="button" class="btn btn-primary" onclick="alterarloja()"> alterar</button>
+
+                        <button type="reset" class="btn btn-secondary">Limpar Formulário</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <template id="address-template">
+        <div class="address-group">
+            <div class="address-group-header">
+                <div class="address-title">Endereço Adicional</div>
+                <button type="button" class="btn btn-danger remove-address">Remover</button>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label required">Endereço</label>
+                <select class="form-control" name="endereco" required>
+                    <option value="" selected disabled>Selecione um endereço</option>
+                    <option value="endereco1">Endereço 1</option>
+                    <option value="endereco2">Endereço 2</option>
+                    <option value="endereco3">Endereço 3</option>
+                </select>
+                <div class="invalid-feedback">Por favor, selecione um endereço.</div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Tipo de Endereço</label>
+                <input type="text" class="form-control" placeholder="Ex: Filial, Entrega, etc." name="tipo_endereco">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Observações</label>
+                <textarea class="form-control" placeholder="Observações sobre este endereço" name="observacoes" rows="2"></textarea>
+            </div>
+        </div>
+    </template>
+   
+    <script src="../script/loja.js"></script>
+</body>
+</html>
