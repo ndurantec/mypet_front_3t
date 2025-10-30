@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de Venda</title>
+  <link rel="stylesheet" href="/asset/style/venda.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tela de Venda</h1>
+
+    <form id="formVenda">
+      <div class="form-group">
+        <label for="loja">Loja:</label>
+        <input type="text" id="loja" placeholder="Nome da loja" required />
+      </div>
+
+      <div class="form-group">
+        <label for="dataCompra">Data da Compra:</label>
+        <input type="date" id="dataCompra" required />
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" required>
+          <option value="Pendente">Pendente</option>
+          <option value="Pago">Pago</option>
+          <option value="Cancelado">Cancelado</option>
+        </select>
+      </div>
+
+      <h2>Itens da Venda</h2>
+      <table id="tabelaItens">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Descrição</th>
+            <th>Valor (R$)</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="form-group add-item">
+        <select id="tipoItem">
+          <option value="Remedio">Remédio</option>
+          <option value="Consumivel">Consumível</option>
+          <option value="Estetica">Estética</option>
+        </select>
+        <input type="text" id="descricaoItem" placeholder="Descrição do item" />
+        <input type="number" id="valorItem" placeholder="Valor (R$)" min="0" step="0.01" />
+        <button type="button" id="btnAdicionar">Adicionar</button>
+      </div>
+
+      <h3>Total da Venda: R$ <span id="valorTotal">0.00</span></h3>
+
+      <button type="submit" class="btn">Salvar Venda</button>
+    </form>
+
+    <div id="mensagem"></div>
+  </div>
+
+  <script src="/script/venda.js"></script>
+</body>
+</html>
