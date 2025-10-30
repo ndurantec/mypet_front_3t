@@ -1,3 +1,7 @@
+function voltar() {
+    window.location.href = 'home.html';
+}
+
 function validarUsuario(){
     let nome = document.getElementById("nome").value;
     
@@ -120,6 +124,8 @@ function salvar() {
     }
 
  
+    
+
 
   // ====== ENVIO PARA O BACKEND ======
   //Feito os savlamentos no backend. Ythalo
@@ -202,5 +208,6 @@ function deletar() {
     }).catch(error => {
        
     });
+
 
 }

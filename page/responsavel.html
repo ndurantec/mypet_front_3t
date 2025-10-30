@@ -1,63 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsável</title>
-    <link rel="stylesheet" href="/asset/style/responsavel.css">
+    <title>Cadastro Completo</title>
+    <link rel="stylesheet" href="/asset/style/responsavel.css"> 
 </head>
 <body>
-    <div class="terceira">
-        <h1>Responsável</h1>
-        <div class="quarta">
-        
 
-            <form action="" method="">
-                <div class="Nome">
-                <label class="form-nome" for="name">
-                    Nome:
-                </label>
-                <input type="name" class="form-control" id="nome" placeholder="Nome" name="nome">
-                <div id="erro-nome" class="erro"></div>
+    <div class="container">
+        <div class="form-card" id="form-completo">
+            <h2 class="titulo-principal">Bem-vindo!</h2>
+            <p class="subtitulo">Crie sua conta e complete seu perfil</p>
+
+            <form id="form-unico" onsubmit="event.preventDefault(); salvarTudo();">
+                
+                <label>Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo">
+                <span id="erro-nome" class="erro"></span>
+
+                <label>Email</label>
+                <input type="email" id="email" placeholder="seu@email.com">
+                <span id="erro-email" class="erro"></span>
+
+                <label for="telefone1">Telefone</label>
+                <input type="tel" id="telefone1" placeholder="(99) 99999-9999" required>
+                <span id="erro-telefone1" class="erro"></span> 
+
+                <label>Senha</label>
+                <input type="password" id="senha" placeholder="Mínimo 6 caracteres">
+                <span id="erro-senha" class="erro"></span>
+
+                <label>Confirmar Senha</label>
+                <input type="password" id="confirmar-senha" placeholder="Digite a senha novamente">
+                <span id="erro-confirmar" class="erro"></span>
+
+                <hr class="separador">
+                
+                <h3 class="secao-titulo">Informações de Contato e Endereço</h3>
+
+                <label>Endereço Completo</label>
+                <textarea id="endereco" placeholder="Rua, Número, Bairro, Cidade, Estado, CEP"></textarea>
+                <span id="erro-endereco" class="erro"></span>
+
+                <label>Telefone de Contato Alternativo</label>
+                <input type="tel" id="telefone2" placeholder="(00) 00000-0000"> 
+                <span id="erro-telefone2" class="erro"></span>
+
+                <label>Foto de Perfil (até 5)</label>
+                <div class="upload-box">
+                    <input type="file" id="fotos" multiple accept="image/*">
+                    <p>Clique para fazer upload de fotos</p>
                 </div>
 
-                <div class="login">
-                <label class="form-label" for="Login">
-                    Email:
-                </label>
-                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
-                <div id="erro-email" class="erro"></div>
-                </div>
-
-                <div class="senha">
-                    <label class="form-label" for="Senha">
-                        Senha:
-                    </label>
-                    <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha">
-                    <div id="erro-senha" class="erro"></div>
-                </div>
-
-                <div class="telefone">
-                    <label class="form-label" for="Telefone">
-                        Telefone:
-                    </label>
-                    <input type="telefone" class="form-control" id="telefone" placeholder="Telefone" name="telefone">
-                    <div id="erro-telefone" class="erro"></div>
-                    
-                </div>
-
-                <div class="botao">
-
-                    <button class="btn mt-2" type="button" onclick="salvar()" class="">Salvar</button>
-                    <button class="btn mt-2" type="button" onclick="consultar()" class="">Consultar</button>
-                    <button class="btn mt-2" type="button" onclick="atualizar()" class="">Atualizar</button>
-                    <button class="btn mt-2" type="button" onclick="deletar()" class="">Deletar</button>
-
-                </div>
+                <button type="submit" class="btn btn-primary">✓ Finalizar Cadastro</button>
             </form>
         </div>
-
     </div>
+
     <script src="/script/responsavel.js"></script>
 </body>
 </html>

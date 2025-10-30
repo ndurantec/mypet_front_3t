@@ -1,4 +1,4 @@
-function voltar() {
+function salvar() {
     window.location.href = 'home.html';
 }
 
