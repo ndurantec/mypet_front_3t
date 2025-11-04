@@ -10,3 +10,7 @@ function comprarDois() {
     alert("Você precisa estar logado");
      window.location.href = ' login.html';
 }
+
+function pet(){
+    window.location.href = 'perfil_pet.html'
+}

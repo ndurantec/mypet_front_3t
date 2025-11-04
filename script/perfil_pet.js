@@ -30,7 +30,8 @@ function salvarCadastro() {
      const idade = document.getElementById("idade");
      const raca = document.getElementById("raca");
      const tipo = document.getElementById("tipo");
- 
+     const user = localStorage.getItem("id_user");
+
      function validarCampo(campo, texto) {
      if (campo.value.trim() === "") {
         campo.placeholder = texto;

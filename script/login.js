@@ -10,6 +10,10 @@ function coletarDados() {
   };
 }
 
+function redirecionar(){
+  
+}
+
 
 function Autenticar() {
   
@@ -34,9 +38,11 @@ function Autenticar() {
  
   }).then(async response => {
       let data = await response.json();
+      //redirecionar();
 
       console.log(data);
       
+       window.location.href = 'home.html';
 
       if (!response.ok) {
         // Caso sejam erros de validação no DTO
@@ -74,6 +80,8 @@ function Autenticar() {
         }
         throw new Error("Erro de validação");
       }
+
+
 
       return data;
     })
